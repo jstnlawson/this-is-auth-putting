@@ -4,7 +4,9 @@ const ShelfItem = ({ item }) => {
   return (
     <div>
       <ul>
-        <li>{item.image_url}</li>
+        <li>
+          <img src={item.image_url} />
+        </li>
         <li>{item.description}</li>
       </ul>
     </div>
