@@ -5,7 +5,7 @@ const router = express.Router();
 /**
  * Get all of the items on the shelf
  */
-router.get("/", (req, res) => {
+router.get("/",  (req, res) => {
   let queryText = `SELECT * FROM "item";`;
 
   pool
@@ -39,7 +39,9 @@ router.post("/", (req, res) => {
 router.delete("/:id", (req, res) => {
   // endpoint functionality
 });
-
+// *********************************
+// ********* STRECTHS  ********* //
+// *********************************
 /**
  * Update an item if it's something the logged in user added
  */
