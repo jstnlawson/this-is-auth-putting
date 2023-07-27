@@ -15,7 +15,7 @@ function* fetchShelf() {
     const shelfList = yield axios.get("/api/shelf");
 
     // Dispatching action to store all shelf items in 'shelfList' reducer
-    yield putResolve({ type: "SET_SHELF", payload: shelfList.data });
+    yield put({ type: "SET_SHELF", payload: shelfList.data });
   } catch (error) {
     console.log("Shelf list GET request failed. Error is:", error);
   }
