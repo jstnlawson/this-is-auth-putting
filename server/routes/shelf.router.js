@@ -11,8 +11,9 @@ router.get("/", (req, res) => {
   pool
     .query(queryText)
     .then(result => {
+      // Send all the results item to client from Database
       res.send(result.rows);
-      console.log("Recieved all items from DB:", queryText);
+      console.log("Recieved all items from DB:", result.rows);
     })
     .catch(err => {
       console.log(`ERROR in GET form items: ${queryText} `, err);
