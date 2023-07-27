@@ -5,9 +5,9 @@ const ShelfItem = ({ item }) => {
     <div>
       <ul>
         <li>
-          <img src={item.image_url} />
+          <img src={item?.image_url} />
         </li>
-        <li>{item.description}</li>
+        <li>{item?.description}</li>
       </ul>
     </div>
   );

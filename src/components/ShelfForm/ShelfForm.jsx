@@ -4,18 +4,18 @@ import { useDispatch } from 'react-redux';
 
 function ShelfForm () {
     const dispatch = useDispatch();
-    let [itemToAdd, setItemToAdd] =useState({description: '', image_url: ''});
+    let [itemToAdd, setItemToAdd] =useState({description: '', image_url: '', user_id: 2});
 
-    const handleDescription = (event) => {
+    const handleDescription = (event) => { 
         setItemToAdd({
-           itemToAdd,
-           description: event.target.value,  
+            ...itemToAdd,
+            description: event.target.value,
         })
     }
 
     const handleURL = (event) => {
         setItemToAdd({
-            itemToAdd,
+            ...itemToAdd,
             image_url: event.target.value,
         })
 
@@ -25,10 +25,7 @@ function ShelfForm () {
         event.preventDefault()
         dispatch({
             type: 'ADD_ITEM',
-            payload: {
-                description: description,
-                image: image_url,
-              },
+            payload: itemToAdd
         })
 
     }
@@ -38,6 +35,7 @@ function ShelfForm () {
           <input
             onChange={handleDescription}
             type='text'
+            value={itemToAdd.description}
             placeholder='description'
           />
     
@@ -45,6 +43,7 @@ function ShelfForm () {
             onChange={handleURL}
             type='text'
             placeholder='url'
+            value={itemToAdd.image_url}
           />
     
           <button type='submit'>Submit</button>

@@ -8,10 +8,9 @@ function* formSaga() {
 function* addItem(action) {
     try {
         yield axios.post('/api/shelf', action.payload)
-        yield axios.put({type: 'SET_SHELF', payload: action.payload})
+        yield put({type: 'SET_SHELF', payload: action.payload})
     } catch (error) {
         console.log('Error with add item:', error);
-        yield put({ type: 'ADD_ITEM' });
       }
 }
 
