@@ -35,7 +35,9 @@ router.post("/", (req, res) => {
 router.delete("/:id", (req, res) => {
   // endpoint functionality
 });
-
+// *********************************
+// ********* STRECTHS  ********* //
+// *********************************
 /**
  * Update an item if it's something the logged in user added
  */
