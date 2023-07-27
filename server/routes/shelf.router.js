@@ -27,6 +27,10 @@ router.get("/",  (req, res) => {
  */
 router.post("/", (req, res) => {
   // endpoint functionality
+  console.log('in shelf.router.js POST route');
+  console.log('req.body: ', req.body);
+  console.log('user: ', req.user);
+  res.sendStatus(200);
 });
 
 /**

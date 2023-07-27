@@ -2,6 +2,8 @@ import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
 import shelf from '../reducers/shelf.reducer'
+import form from './form.reducer'
+
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -11,7 +13,8 @@ import shelf from '../reducers/shelf.reducer'
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
-  shelf
+  shelf,
+  form // will POST description and imageURL
 });
 
 export default rootReducer;
