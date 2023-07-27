@@ -15,3 +15,9 @@ CREATE TABLE "item" (
     "image_url" VARCHAR (2083),
     "user_id" INT REFERENCES "user"
 );
+
+-- Testing/ and displaying in the Shelf page
+INSERT INTO "item" ("description","image_url", "user_id")
+VALUES 
+	('Beauty and the Beast', 'beauty-and-the-beast.jpg',1), 
+	('Captain Marvel', 'captain-marvel.jpg',1);
