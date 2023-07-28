@@ -31,8 +31,12 @@ router.post("/", (req, res) => {
   console.log('in shelf.router.js POST route');
   console.log('req.body: ', req.body);
   console.log('user: ', req.user);
+  //let queryText = `INSERT INTO "item" ("description", "image_url", "user_id") VALUES ($1, $2, $3) `
   let queryText = `INSERT INTO "item" ("description", "image_url", "user_id") VALUES ($1, $2, $3) `
-  pool.query(queryText, [req.body.description, req.body.image_url, req.user_id])
+
+  
+  pool.query(queryText, [req.body.description, req.body.image_url, req.user.id])
+
   .then(() => {
     res.sendStatus(200);
   })

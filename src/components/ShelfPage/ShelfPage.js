@@ -13,7 +13,7 @@ function ShelfPage() {
     // GET dispatch
     dispatch({ type: "FETCH_SHELF" });
     // POST dispatch
-    dispatch({ type: 'ADD_ITEM' })
+    //dispatch({ type: 'ADD_ITEM' })
   }, []);
   return (
     <div className="container">
@@ -22,7 +22,7 @@ function ShelfPage() {
       <p>All of the available items can be seen here.</p>
       {/* Map the shelfList in the ShelfItem components to render in the DOM */}
       {shelf.map(item => {
-        return <ShelfItem item={item} />;
+        return <ShelfItem key={item.id} item={item} />;
       })}
     </div>
   );
