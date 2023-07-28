@@ -7,12 +7,14 @@ const ShelfItem = ({ item }) => {
     <div>
         <ul>
         <li>
+
           <img src={item?.image_url} />
         </li>
         <li>{item?.description}</li>
          {user.id == item.user_id  && <button>Delete</button> }
          
         
+
       </ul>
 
     </div>
